@@ -60,7 +60,7 @@ namespace QuanLyQuanCafe
             this.btnDeleteFood = new System.Windows.Forms.Button();
             this.btnAddFood = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dtgvFool = new System.Windows.Forms.DataGridView();
+            this.dtgvFood = new System.Windows.Forms.DataGridView();
             this.tpFoodCatagory = new System.Windows.Forms.TabPage();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -77,8 +77,10 @@ namespace QuanLyQuanCafe
             this.panel18 = new System.Windows.Forms.Panel();
             this.dtgvCategory = new System.Windows.Forms.DataGridView();
             this.tpTable = new System.Windows.Forms.TabPage();
-            this.tpAccount = new System.Windows.Forms.TabPage();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.cbTableStatus = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.cbTableName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -92,10 +94,9 @@ namespace QuanLyQuanCafe
             this.btnAddTable = new System.Windows.Forms.Button();
             this.panel20 = new System.Windows.Forms.Panel();
             this.dtgvTable = new System.Windows.Forms.DataGridView();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.cbTableStatus = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.tpAccount = new System.Windows.Forms.TabPage();
             this.panel23 = new System.Windows.Forms.Panel();
+            this.btnResetPassword = new System.Windows.Forms.Button();
             this.panel25 = new System.Windows.Forms.Panel();
             this.cbAccountType = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -112,7 +113,6 @@ namespace QuanLyQuanCafe
             this.btnAddAccount = new System.Windows.Forms.Button();
             this.panel29 = new System.Windows.Forms.Panel();
             this.dtgvAccount = new System.Windows.Forms.DataGridView();
-            this.btnResetPassword = new System.Windows.Forms.Button();
             this.tcAdmin.SuspendLayout();
             this.tpBill.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -128,7 +128,7 @@ namespace QuanLyQuanCafe
             this.panel7.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvFool)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvFood)).BeginInit();
             this.tpFoodCatagory.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel15.SuspendLayout();
@@ -137,14 +137,14 @@ namespace QuanLyQuanCafe
             this.panel18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCategory)).BeginInit();
             this.tpTable.SuspendLayout();
-            this.tpAccount.SuspendLayout();
             this.panel11.SuspendLayout();
+            this.panel21.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel19.SuspendLayout();
             this.panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTable)).BeginInit();
-            this.panel21.SuspendLayout();
+            this.tpAccount.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panel25.SuspendLayout();
             this.panel26.SuspendLayout();
@@ -192,16 +192,16 @@ namespace QuanLyQuanCafe
             // btnViewBill
             // 
             this.btnViewBill.AutoSize = true;
-            this.btnViewBill.Location = new System.Drawing.Point(388, 0);
+            this.btnViewBill.Location = new System.Drawing.Point(361, 0);
             this.btnViewBill.Name = "btnViewBill";
-            this.btnViewBill.Size = new System.Drawing.Size(76, 30);
+            this.btnViewBill.Size = new System.Drawing.Size(88, 34);
             this.btnViewBill.TabIndex = 2;
             this.btnViewBill.Text = "Thống kê";
             this.btnViewBill.UseVisualStyleBackColor = true;
             // 
             // tdpkToDate
             // 
-            this.tdpkToDate.Location = new System.Drawing.Point(657, 3);
+            this.tdpkToDate.Location = new System.Drawing.Point(593, 2);
             this.tdpkToDate.Name = "tdpkToDate";
             this.tdpkToDate.Size = new System.Drawing.Size(200, 26);
             this.tdpkToDate.TabIndex = 1;
@@ -218,7 +218,7 @@ namespace QuanLyQuanCafe
             this.panel1.Controls.Add(this.dtgvBill);
             this.panel1.Location = new System.Drawing.Point(6, 45);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(860, 464);
+            this.panel1.Size = new System.Drawing.Size(796, 464);
             this.panel1.TabIndex = 0;
             // 
             // dtgvBill
@@ -226,7 +226,8 @@ namespace QuanLyQuanCafe
             this.dtgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvBill.Location = new System.Drawing.Point(3, 3);
             this.dtgvBill.Name = "dtgvBill";
-            this.dtgvBill.Size = new System.Drawing.Size(854, 458);
+            this.dtgvBill.RowHeadersWidth = 51;
+            this.dtgvBill.Size = new System.Drawing.Size(790, 458);
             this.dtgvBill.TabIndex = 0;
             // 
             // tpFood
@@ -456,19 +457,20 @@ namespace QuanLyQuanCafe
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.dtgvFool);
+            this.panel3.Controls.Add(this.dtgvFood);
             this.panel3.Location = new System.Drawing.Point(6, 96);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(434, 413);
             this.panel3.TabIndex = 0;
             // 
-            // dtgvFool
+            // dtgvFood
             // 
-            this.dtgvFool.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvFool.Location = new System.Drawing.Point(3, 3);
-            this.dtgvFool.Name = "dtgvFool";
-            this.dtgvFool.Size = new System.Drawing.Size(422, 407);
-            this.dtgvFool.TabIndex = 0;
+            this.dtgvFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvFood.Location = new System.Drawing.Point(3, 3);
+            this.dtgvFood.Name = "dtgvFood";
+            this.dtgvFood.RowHeadersWidth = 51;
+            this.dtgvFood.Size = new System.Drawing.Size(422, 407);
+            this.dtgvFood.TabIndex = 0;
             // 
             // tpFoodCatagory
             // 
@@ -617,6 +619,7 @@ namespace QuanLyQuanCafe
             this.dtgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvCategory.Location = new System.Drawing.Point(3, 3);
             this.dtgvCategory.Name = "dtgvCategory";
+            this.dtgvCategory.RowHeadersWidth = 51;
             this.dtgvCategory.Size = new System.Drawing.Size(422, 407);
             this.dtgvCategory.TabIndex = 0;
             // 
@@ -633,19 +636,6 @@ namespace QuanLyQuanCafe
             this.tpTable.Text = "Bàn ăn";
             this.tpTable.UseVisualStyleBackColor = true;
             // 
-            // tpAccount
-            // 
-            this.tpAccount.Controls.Add(this.panel23);
-            this.tpAccount.Controls.Add(this.panel28);
-            this.tpAccount.Controls.Add(this.panel29);
-            this.tpAccount.Location = new System.Drawing.Point(4, 29);
-            this.tpAccount.Name = "tpAccount";
-            this.tpAccount.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAccount.Size = new System.Drawing.Size(805, 515);
-            this.tpAccount.TabIndex = 4;
-            this.tpAccount.Text = "Tài khoản";
-            this.tpAccount.UseVisualStyleBackColor = true;
-            // 
             // panel11
             // 
             this.panel11.Controls.Add(this.panel21);
@@ -655,6 +645,36 @@ namespace QuanLyQuanCafe
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(346, 413);
             this.panel11.TabIndex = 9;
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.cbTableStatus);
+            this.panel21.Controls.Add(this.label9);
+            this.panel21.Location = new System.Drawing.Point(4, 164);
+            this.panel21.Margin = new System.Windows.Forms.Padding(4);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(336, 72);
+            this.panel21.TabIndex = 3;
+            // 
+            // cbTableStatus
+            // 
+            this.cbTableStatus.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTableStatus.Location = new System.Drawing.Point(136, 21);
+            this.cbTableStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.cbTableStatus.Name = "cbTableStatus";
+            this.cbTableStatus.Size = new System.Drawing.Size(196, 26);
+            this.cbTableStatus.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(4, 24);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(91, 19);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Trạng thái:";
             // 
             // panel13
             // 
@@ -781,38 +801,22 @@ namespace QuanLyQuanCafe
             this.dtgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvTable.Location = new System.Drawing.Point(3, 3);
             this.dtgvTable.Name = "dtgvTable";
+            this.dtgvTable.RowHeadersWidth = 51;
             this.dtgvTable.Size = new System.Drawing.Size(422, 407);
             this.dtgvTable.TabIndex = 0;
             // 
-            // panel21
+            // tpAccount
             // 
-            this.panel21.Controls.Add(this.cbTableStatus);
-            this.panel21.Controls.Add(this.label9);
-            this.panel21.Location = new System.Drawing.Point(4, 164);
-            this.panel21.Margin = new System.Windows.Forms.Padding(4);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(336, 72);
-            this.panel21.TabIndex = 3;
-            // 
-            // cbTableStatus
-            // 
-            this.cbTableStatus.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTableStatus.Location = new System.Drawing.Point(136, 21);
-            this.cbTableStatus.Margin = new System.Windows.Forms.Padding(4);
-            this.cbTableStatus.Name = "cbTableStatus";
-            this.cbTableStatus.Size = new System.Drawing.Size(196, 26);
-            this.cbTableStatus.TabIndex = 1;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(4, 24);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(91, 19);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Trạng thái:";
+            this.tpAccount.Controls.Add(this.panel23);
+            this.tpAccount.Controls.Add(this.panel28);
+            this.tpAccount.Controls.Add(this.panel29);
+            this.tpAccount.Location = new System.Drawing.Point(4, 29);
+            this.tpAccount.Name = "tpAccount";
+            this.tpAccount.Padding = new System.Windows.Forms.Padding(3);
+            this.tpAccount.Size = new System.Drawing.Size(805, 515);
+            this.tpAccount.TabIndex = 4;
+            this.tpAccount.Text = "Tài khoản";
+            this.tpAccount.UseVisualStyleBackColor = true;
             // 
             // panel23
             // 
@@ -824,6 +828,16 @@ namespace QuanLyQuanCafe
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(346, 413);
             this.panel23.TabIndex = 6;
+            // 
+            // btnResetPassword
+            // 
+            this.btnResetPassword.AutoSize = true;
+            this.btnResetPassword.Location = new System.Drawing.Point(204, 243);
+            this.btnResetPassword.Name = "btnResetPassword";
+            this.btnResetPassword.Size = new System.Drawing.Size(136, 78);
+            this.btnResetPassword.TabIndex = 4;
+            this.btnResetPassword.Text = "Đặt lại mật khẩu";
+            this.btnResetPassword.UseVisualStyleBackColor = true;
             // 
             // panel25
             // 
@@ -979,18 +993,9 @@ namespace QuanLyQuanCafe
             this.dtgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvAccount.Location = new System.Drawing.Point(3, 3);
             this.dtgvAccount.Name = "dtgvAccount";
+            this.dtgvAccount.RowHeadersWidth = 51;
             this.dtgvAccount.Size = new System.Drawing.Size(422, 407);
             this.dtgvAccount.TabIndex = 0;
-            // 
-            // btnResetPassword
-            // 
-            this.btnResetPassword.AutoSize = true;
-            this.btnResetPassword.Location = new System.Drawing.Point(220, 243);
-            this.btnResetPassword.Name = "btnResetPassword";
-            this.btnResetPassword.Size = new System.Drawing.Size(120, 78);
-            this.btnResetPassword.TabIndex = 4;
-            this.btnResetPassword.Text = "Đặt lại mật khẩu";
-            this.btnResetPassword.UseVisualStyleBackColor = true;
             // 
             // fAdmin
             // 
@@ -1025,7 +1030,7 @@ namespace QuanLyQuanCafe
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvFool)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvFood)).EndInit();
             this.tpFoodCatagory.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
@@ -1037,8 +1042,9 @@ namespace QuanLyQuanCafe
             this.panel18.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCategory)).EndInit();
             this.tpTable.ResumeLayout(false);
-            this.tpAccount.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             this.panel14.ResumeLayout(false);
@@ -1047,8 +1053,7 @@ namespace QuanLyQuanCafe
             this.panel19.PerformLayout();
             this.panel20.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTable)).EndInit();
-            this.panel21.ResumeLayout(false);
-            this.panel21.PerformLayout();
+            this.tpAccount.ResumeLayout(false);
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
             this.panel25.ResumeLayout(false);
@@ -1081,7 +1086,7 @@ namespace QuanLyQuanCafe
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnAddFood;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dtgvFool;
+        private System.Windows.Forms.DataGridView dtgvFood;
         private System.Windows.Forms.TabPage tpFoodCatagory;
         private System.Windows.Forms.TabPage tpTable;
         private System.Windows.Forms.TabPage tpAccount;

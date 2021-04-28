@@ -50,17 +50,18 @@ namespace QuanLyQuanCafe
             this.panel1.Location = new System.Drawing.Point(15, 18);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(536, 72);
+            this.panel1.Size = new System.Drawing.Size(525, 72);
             this.panel1.TabIndex = 0;
             // 
             // txbUserName
             // 
             this.txbUserName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbUserName.Location = new System.Drawing.Point(152, 21);
+            this.txbUserName.Location = new System.Drawing.Point(171, 21);
             this.txbUserName.Margin = new System.Windows.Forms.Padding(4);
             this.txbUserName.Name = "txbUserName";
-            this.txbUserName.Size = new System.Drawing.Size(366, 26);
+            this.txbUserName.Size = new System.Drawing.Size(347, 26);
             this.txbUserName.TabIndex = 1;
+            this.txbUserName.Text = "quocvuong";
             // 
             // label1
             // 
@@ -81,17 +82,18 @@ namespace QuanLyQuanCafe
             this.panel2.Location = new System.Drawing.Point(15, 98);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(536, 49);
+            this.panel2.Size = new System.Drawing.Size(525, 49);
             this.panel2.TabIndex = 2;
             // 
             // txbPassWord
             // 
             this.txbPassWord.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPassWord.Location = new System.Drawing.Point(152, 4);
+            this.txbPassWord.Location = new System.Drawing.Point(171, 4);
             this.txbPassWord.Margin = new System.Windows.Forms.Padding(4);
             this.txbPassWord.Name = "txbPassWord";
-            this.txbPassWord.Size = new System.Drawing.Size(366, 26);
+            this.txbPassWord.Size = new System.Drawing.Size(347, 26);
             this.txbPassWord.TabIndex = 1;
+            this.txbPassWord.Text = "1";
             this.txbPassWord.UseSystemPasswordChar = true;
             // 
             // label2
@@ -108,7 +110,7 @@ namespace QuanLyQuanCafe
             // btnLogin
             // 
             this.btnLogin.AutoSize = true;
-            this.btnLogin.Location = new System.Drawing.Point(323, 155);
+            this.btnLogin.Location = new System.Drawing.Point(305, 155);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(110, 40);
@@ -120,7 +122,8 @@ namespace QuanLyQuanCafe
             // btnExit
             // 
             this.btnExit.AutoSize = true;
-            this.btnExit.Location = new System.Drawing.Point(441, 155);
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnExit.Location = new System.Drawing.Point(423, 155);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(110, 40);
@@ -135,7 +138,7 @@ namespace QuanLyQuanCafe
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
-            this.ClientSize = new System.Drawing.Size(566, 216);
+            this.ClientSize = new System.Drawing.Size(550, 216);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.panel2);

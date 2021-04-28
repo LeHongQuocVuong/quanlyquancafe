@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyQuanCafe.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +17,6 @@ namespace QuanLyQuanCafe
         {
             InitializeComponent();
         }
+
     }
 }
