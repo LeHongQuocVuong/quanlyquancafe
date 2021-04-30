@@ -26,15 +26,27 @@ namespace QuanLyQuanCafe.DTO
 
         private string status;
 
-        public string Status { get => status; set => status = value; }
+        public string Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
 
         private string name;
 
-        public string Name { get => name; set => name = value; }
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
 
         private int iD;
 
-        public int ID { get => iD; set => iD = value; }
-        
+        public int ID
+        {
+            get { return iD; }
+            set { iD = value; }
+        }
+
     }
 }
