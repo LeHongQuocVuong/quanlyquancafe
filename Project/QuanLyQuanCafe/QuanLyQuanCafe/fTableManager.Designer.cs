@@ -36,6 +36,10 @@ namespace QuanLyQuanCafe
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lsvBill = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel4 = new System.Windows.Forms.Panel();
             this.nmFoodCount = new System.Windows.Forms.NumericUpDown();
             this.btnAddFood = new System.Windows.Forms.Button();
@@ -43,15 +47,12 @@ namespace QuanLyQuanCafe
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txbTotalPrice = new System.Windows.Forms.TextBox();
             this.cbSwitchTable = new System.Windows.Forms.ComboBox();
             this.btnSwitchTable = new System.Windows.Forms.Button();
             this.nmDiscount = new System.Windows.Forms.NumericUpDown();
             this.btnDiscount = new System.Windows.Forms.Button();
             this.btnCheckOut = new System.Windows.Forms.Button();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -70,7 +71,7 @@ namespace QuanLyQuanCafe
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(12, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1133, 34);
+            this.menuStrip1.Size = new System.Drawing.Size(1233, 34);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -110,7 +111,7 @@ namespace QuanLyQuanCafe
             this.panel2.Location = new System.Drawing.Point(624, 105);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(497, 386);
+            this.panel2.Size = new System.Drawing.Size(596, 386);
             this.panel2.TabIndex = 2;
             // 
             // lsvBill
@@ -125,10 +126,30 @@ namespace QuanLyQuanCafe
             this.lsvBill.Location = new System.Drawing.Point(4, 3);
             this.lsvBill.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lsvBill.Name = "lsvBill";
-            this.lsvBill.Size = new System.Drawing.Size(489, 380);
+            this.lsvBill.Size = new System.Drawing.Size(588, 380);
             this.lsvBill.TabIndex = 0;
             this.lsvBill.UseCompatibleStateImageBehavior = false;
             this.lsvBill.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Tên món";
+            this.columnHeader1.Width = 275;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Số lượng";
+            this.columnHeader2.Width = 91;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Đơn giá";
+            this.columnHeader3.Width = 96;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Thành tiền";
+            this.columnHeader4.Width = 116;
             // 
             // panel4
             // 
@@ -139,12 +160,12 @@ namespace QuanLyQuanCafe
             this.panel4.Location = new System.Drawing.Point(624, 34);
             this.panel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(497, 68);
+            this.panel4.Size = new System.Drawing.Size(596, 68);
             this.panel4.TabIndex = 4;
             // 
             // nmFoodCount
             // 
-            this.nmFoodCount.Location = new System.Drawing.Point(430, 22);
+            this.nmFoodCount.Location = new System.Drawing.Point(528, 20);
             this.nmFoodCount.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.nmFoodCount.Minimum = new decimal(new int[] {
             100,
@@ -163,13 +184,14 @@ namespace QuanLyQuanCafe
             // btnAddFood
             // 
             this.btnAddFood.AutoSize = true;
-            this.btnAddFood.Location = new System.Drawing.Point(302, 5);
+            this.btnAddFood.Location = new System.Drawing.Point(366, 5);
             this.btnAddFood.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAddFood.Name = "btnAddFood";
             this.btnAddFood.Size = new System.Drawing.Size(121, 59);
             this.btnAddFood.TabIndex = 2;
             this.btnAddFood.Text = "Thêm món";
             this.btnAddFood.UseVisualStyleBackColor = true;
+            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
             // cbFood
             // 
@@ -188,6 +210,7 @@ namespace QuanLyQuanCafe
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(291, 33);
             this.cbCategory.TabIndex = 0;
+            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
             // flpTable
             // 
@@ -200,6 +223,7 @@ namespace QuanLyQuanCafe
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txbTotalPrice);
             this.panel1.Controls.Add(this.cbSwitchTable);
             this.panel1.Controls.Add(this.btnSwitchTable);
             this.panel1.Controls.Add(this.nmDiscount);
@@ -208,8 +232,20 @@ namespace QuanLyQuanCafe
             this.panel1.Location = new System.Drawing.Point(624, 498);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(497, 89);
+            this.panel1.Size = new System.Drawing.Size(592, 89);
             this.panel1.TabIndex = 5;
+            // 
+            // txbTotalPrice
+            // 
+            this.txbTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTotalPrice.ForeColor = System.Drawing.Color.OrangeRed;
+            this.txbTotalPrice.Location = new System.Drawing.Point(273, 25);
+            this.txbTotalPrice.Name = "txbTotalPrice";
+            this.txbTotalPrice.ReadOnly = true;
+            this.txbTotalPrice.Size = new System.Drawing.Size(184, 30);
+            this.txbTotalPrice.TabIndex = 5;
+            this.txbTotalPrice.Text = "0";
+            this.txbTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cbSwitchTable
             // 
@@ -230,10 +266,11 @@ namespace QuanLyQuanCafe
             this.btnSwitchTable.TabIndex = 4;
             this.btnSwitchTable.Text = "Chuyển bàn";
             this.btnSwitchTable.UseVisualStyleBackColor = true;
+            this.btnSwitchTable.Click += new System.EventHandler(this.btnSwitchTable_Click);
             // 
             // nmDiscount
             // 
-            this.nmDiscount.Location = new System.Drawing.Point(196, 44);
+            this.nmDiscount.Location = new System.Drawing.Point(142, 44);
             this.nmDiscount.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.nmDiscount.Name = "nmDiscount";
             this.nmDiscount.Size = new System.Drawing.Size(124, 30);
@@ -242,7 +279,7 @@ namespace QuanLyQuanCafe
             // btnDiscount
             // 
             this.btnDiscount.AutoSize = true;
-            this.btnDiscount.Location = new System.Drawing.Point(196, 5);
+            this.btnDiscount.Location = new System.Drawing.Point(142, 5);
             this.btnDiscount.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDiscount.Name = "btnDiscount";
             this.btnDiscount.Size = new System.Drawing.Size(124, 35);
@@ -253,39 +290,20 @@ namespace QuanLyQuanCafe
             // btnCheckOut
             // 
             this.btnCheckOut.AutoSize = true;
-            this.btnCheckOut.Location = new System.Drawing.Point(366, 5);
+            this.btnCheckOut.Location = new System.Drawing.Point(464, 6);
             this.btnCheckOut.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(124, 68);
             this.btnCheckOut.TabIndex = 2;
             this.btnCheckOut.Text = "Thanh toán";
             this.btnCheckOut.UseVisualStyleBackColor = true;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Tên món";
-            this.columnHeader1.Width = 178;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Số lượng";
-            this.columnHeader2.Width = 91;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Đơn giá";
-            this.columnHeader3.Width = 96;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Thành tiền";
-            this.columnHeader4.Width = 116;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
             // fTableManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1133, 599);
+            this.ClientSize = new System.Drawing.Size(1233, 599);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flpTable);
             this.Controls.Add(this.panel4);
@@ -336,5 +354,6 @@ namespace QuanLyQuanCafe
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.TextBox txbTotalPrice;
     }
 }

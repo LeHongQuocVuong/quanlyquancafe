@@ -33,7 +33,7 @@ namespace QuanLyQuanCafe
             this.tpBill = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnViewBill = new System.Windows.Forms.Button();
-            this.tdpkToDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpkToDate = new System.Windows.Forms.DateTimePicker();
             this.dtpkFromDate = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtgvBill = new System.Windows.Forms.DataGridView();
@@ -184,7 +184,7 @@ namespace QuanLyQuanCafe
             // panel2
             // 
             this.panel2.Controls.Add(this.btnViewBill);
-            this.panel2.Controls.Add(this.tdpkToDate);
+            this.panel2.Controls.Add(this.dtpkToDate);
             this.panel2.Controls.Add(this.dtpkFromDate);
             this.panel2.Location = new System.Drawing.Point(7, 6);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -202,14 +202,15 @@ namespace QuanLyQuanCafe
             this.btnViewBill.TabIndex = 2;
             this.btnViewBill.Text = "Thống kê";
             this.btnViewBill.UseVisualStyleBackColor = true;
+            this.btnViewBill.Click += new System.EventHandler(this.btnViewBill_Click);
             // 
-            // tdpkToDate
+            // dtpkToDate
             // 
-            this.tdpkToDate.Location = new System.Drawing.Point(617, 2);
-            this.tdpkToDate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tdpkToDate.Name = "tdpkToDate";
-            this.tdpkToDate.Size = new System.Drawing.Size(334, 30);
-            this.tdpkToDate.TabIndex = 1;
+            this.dtpkToDate.Location = new System.Drawing.Point(617, 2);
+            this.dtpkToDate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dtpkToDate.Name = "dtpkToDate";
+            this.dtpkToDate.Size = new System.Drawing.Size(334, 30);
+            this.dtpkToDate.TabIndex = 1;
             // 
             // dtpkFromDate
             // 
@@ -230,6 +231,7 @@ namespace QuanLyQuanCafe
             // 
             // dtgvBill
             // 
+            this.dtgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvBill.Location = new System.Drawing.Point(4, 3);
             this.dtgvBill.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -407,6 +409,7 @@ namespace QuanLyQuanCafe
             this.txbFoodID.ReadOnly = true;
             this.txbFoodID.Size = new System.Drawing.Size(272, 30);
             this.txbFoodID.TabIndex = 1;
+            this.txbFoodID.TextChanged += new System.EventHandler(this.txbFoodID_TextChanged);
             // 
             // label1
             // 
@@ -441,6 +444,7 @@ namespace QuanLyQuanCafe
             this.btnShowFood.TabIndex = 3;
             this.btnShowFood.Text = "Xem";
             this.btnShowFood.UseVisualStyleBackColor = true;
+            this.btnShowFood.Click += new System.EventHandler(this.btnShowFood_Click);
             // 
             // btnEditFood
             // 
@@ -1055,7 +1059,7 @@ namespace QuanLyQuanCafe
             this.ClientSize = new System.Drawing.Size(996, 596);
             this.Controls.Add(this.tcAdmin);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "fAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
@@ -1128,7 +1132,7 @@ namespace QuanLyQuanCafe
         private System.Windows.Forms.TabPage tpFood;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnViewBill;
-        private System.Windows.Forms.DateTimePicker tdpkToDate;
+        private System.Windows.Forms.DateTimePicker dtpkToDate;
         private System.Windows.Forms.DateTimePicker dtpkFromDate;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dtgvBill;

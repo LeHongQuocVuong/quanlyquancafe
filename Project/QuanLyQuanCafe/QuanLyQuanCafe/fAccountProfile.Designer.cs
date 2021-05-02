@@ -132,6 +132,7 @@ namespace QuanLyQuanCafe
             this.txbPassWord.Name = "txbPassWord";
             this.txbPassWord.Size = new System.Drawing.Size(437, 30);
             this.txbPassWord.TabIndex = 1;
+            this.txbPassWord.UseSystemPasswordChar = true;
             this.txbPassWord.UseWaitCursor = true;
             // 
             // label3
@@ -163,6 +164,7 @@ namespace QuanLyQuanCafe
             this.txbNewPass.Name = "txbNewPass";
             this.txbNewPass.Size = new System.Drawing.Size(437, 30);
             this.txbNewPass.TabIndex = 1;
+            this.txbNewPass.UseSystemPasswordChar = true;
             this.txbNewPass.UseWaitCursor = true;
             // 
             // label4
@@ -194,6 +196,7 @@ namespace QuanLyQuanCafe
             this.txbReEnterPass.Name = "txbReEnterPass";
             this.txbReEnterPass.Size = new System.Drawing.Size(437, 30);
             this.txbReEnterPass.TabIndex = 1;
+            this.txbReEnterPass.UseSystemPasswordChar = true;
             this.txbReEnterPass.UseWaitCursor = true;
             // 
             // label5
@@ -217,6 +220,7 @@ namespace QuanLyQuanCafe
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnExit
             // 
@@ -246,7 +250,7 @@ namespace QuanLyQuanCafe
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "fAccountProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin cá nhân";
