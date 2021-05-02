@@ -64,7 +64,7 @@ namespace QuanLyQuanCafe
             this.tpFoodCatagory = new System.Windows.Forms.TabPage();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txbCategoryName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
             this.txbCategoryID = new System.Windows.Forms.TextBox();
@@ -79,13 +79,12 @@ namespace QuanLyQuanCafe
             this.tpTable = new System.Windows.Forms.TabPage();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.cbTableStatus = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.cbTableName = new System.Windows.Forms.TextBox();
+            this.txbTableName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.cbTableID = new System.Windows.Forms.TextBox();
+            this.txbTableID = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
             this.btnShowTable = new System.Windows.Forms.Button();
@@ -113,6 +112,7 @@ namespace QuanLyQuanCafe
             this.btnAddAccount = new System.Windows.Forms.Button();
             this.panel29 = new System.Windows.Forms.Panel();
             this.dtgvAccount = new System.Windows.Forms.DataGridView();
+            this.txbTableStatus = new System.Windows.Forms.TextBox();
             this.tcAdmin.SuspendLayout();
             this.tpBill.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -456,6 +456,7 @@ namespace QuanLyQuanCafe
             this.btnEditFood.TabIndex = 2;
             this.btnEditFood.Text = "Sửa";
             this.btnEditFood.UseVisualStyleBackColor = true;
+            this.btnEditFood.Click += new System.EventHandler(this.btnEditFood_Click);
             // 
             // btnDeleteFood
             // 
@@ -467,6 +468,7 @@ namespace QuanLyQuanCafe
             this.btnDeleteFood.TabIndex = 1;
             this.btnDeleteFood.Text = "Xóa";
             this.btnDeleteFood.UseVisualStyleBackColor = true;
+            this.btnDeleteFood.Click += new System.EventHandler(this.btnDeleteFood_Click);
             // 
             // btnAddFood
             // 
@@ -478,6 +480,7 @@ namespace QuanLyQuanCafe
             this.btnAddFood.TabIndex = 0;
             this.btnAddFood.Text = "Thêm";
             this.btnAddFood.UseVisualStyleBackColor = true;
+            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
             // panel3
             // 
@@ -524,7 +527,7 @@ namespace QuanLyQuanCafe
             // 
             // panel15
             // 
-            this.panel15.Controls.Add(this.textBox2);
+            this.panel15.Controls.Add(this.txbCategoryName);
             this.panel15.Controls.Add(this.label7);
             this.panel15.Location = new System.Drawing.Point(5, 87);
             this.panel15.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -532,14 +535,14 @@ namespace QuanLyQuanCafe
             this.panel15.Size = new System.Drawing.Size(403, 75);
             this.panel15.TabIndex = 2;
             // 
-            // textBox2
+            // txbCategoryName
             // 
-            this.textBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(163, 22);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(234, 30);
-            this.textBox2.TabIndex = 1;
+            this.txbCategoryName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbCategoryName.Location = new System.Drawing.Point(163, 22);
+            this.txbCategoryName.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txbCategoryName.Name = "txbCategoryName";
+            this.txbCategoryName.Size = new System.Drawing.Size(234, 30);
+            this.txbCategoryName.TabIndex = 1;
             // 
             // label7
             // 
@@ -605,6 +608,7 @@ namespace QuanLyQuanCafe
             this.btnShowCategory.TabIndex = 3;
             this.btnShowCategory.Text = "Xem";
             this.btnShowCategory.UseVisualStyleBackColor = true;
+            this.btnShowCategory.Click += new System.EventHandler(this.btnShowCategory_Click);
             // 
             // btnEditCategory
             // 
@@ -616,6 +620,7 @@ namespace QuanLyQuanCafe
             this.btnEditCategory.TabIndex = 2;
             this.btnEditCategory.Text = "Sửa";
             this.btnEditCategory.UseVisualStyleBackColor = true;
+            this.btnEditCategory.Click += new System.EventHandler(this.btnEditCategory_Click);
             // 
             // btnDeleteCategory
             // 
@@ -627,6 +632,7 @@ namespace QuanLyQuanCafe
             this.btnDeleteCategory.TabIndex = 1;
             this.btnDeleteCategory.Text = "Xóa";
             this.btnDeleteCategory.UseVisualStyleBackColor = true;
+            this.btnDeleteCategory.Click += new System.EventHandler(this.btnDeleteCategory_Click);
             // 
             // btnAddCategory
             // 
@@ -638,6 +644,7 @@ namespace QuanLyQuanCafe
             this.btnAddCategory.TabIndex = 0;
             this.btnAddCategory.Text = "Thêm";
             this.btnAddCategory.UseVisualStyleBackColor = true;
+            this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
             // 
             // panel18
             // 
@@ -685,22 +692,13 @@ namespace QuanLyQuanCafe
             // 
             // panel21
             // 
-            this.panel21.Controls.Add(this.cbTableStatus);
+            this.panel21.Controls.Add(this.txbTableStatus);
             this.panel21.Controls.Add(this.label9);
             this.panel21.Location = new System.Drawing.Point(5, 171);
             this.panel21.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(403, 75);
             this.panel21.TabIndex = 3;
-            // 
-            // cbTableStatus
-            // 
-            this.cbTableStatus.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTableStatus.Location = new System.Drawing.Point(163, 22);
-            this.cbTableStatus.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.cbTableStatus.Name = "cbTableStatus";
-            this.cbTableStatus.Size = new System.Drawing.Size(234, 30);
-            this.cbTableStatus.TabIndex = 1;
             // 
             // label9
             // 
@@ -715,7 +713,7 @@ namespace QuanLyQuanCafe
             // 
             // panel13
             // 
-            this.panel13.Controls.Add(this.cbTableName);
+            this.panel13.Controls.Add(this.txbTableName);
             this.panel13.Controls.Add(this.label5);
             this.panel13.Location = new System.Drawing.Point(5, 87);
             this.panel13.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -723,14 +721,14 @@ namespace QuanLyQuanCafe
             this.panel13.Size = new System.Drawing.Size(403, 75);
             this.panel13.TabIndex = 2;
             // 
-            // cbTableName
+            // txbTableName
             // 
-            this.cbTableName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTableName.Location = new System.Drawing.Point(163, 22);
-            this.cbTableName.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.cbTableName.Name = "cbTableName";
-            this.cbTableName.Size = new System.Drawing.Size(234, 30);
-            this.cbTableName.TabIndex = 1;
+            this.txbTableName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTableName.Location = new System.Drawing.Point(163, 22);
+            this.txbTableName.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txbTableName.Name = "txbTableName";
+            this.txbTableName.Size = new System.Drawing.Size(234, 30);
+            this.txbTableName.TabIndex = 1;
             // 
             // label5
             // 
@@ -745,7 +743,7 @@ namespace QuanLyQuanCafe
             // 
             // panel14
             // 
-            this.panel14.Controls.Add(this.cbTableID);
+            this.panel14.Controls.Add(this.txbTableID);
             this.panel14.Controls.Add(this.label6);
             this.panel14.Location = new System.Drawing.Point(5, 4);
             this.panel14.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -753,15 +751,15 @@ namespace QuanLyQuanCafe
             this.panel14.Size = new System.Drawing.Size(403, 75);
             this.panel14.TabIndex = 1;
             // 
-            // cbTableID
+            // txbTableID
             // 
-            this.cbTableID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTableID.Location = new System.Drawing.Point(163, 22);
-            this.cbTableID.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.cbTableID.Name = "cbTableID";
-            this.cbTableID.ReadOnly = true;
-            this.cbTableID.Size = new System.Drawing.Size(234, 30);
-            this.cbTableID.TabIndex = 1;
+            this.txbTableID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTableID.Location = new System.Drawing.Point(163, 22);
+            this.txbTableID.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txbTableID.Name = "txbTableID";
+            this.txbTableID.ReadOnly = true;
+            this.txbTableID.Size = new System.Drawing.Size(234, 30);
+            this.txbTableID.TabIndex = 1;
             // 
             // label6
             // 
@@ -796,6 +794,7 @@ namespace QuanLyQuanCafe
             this.btnShowTable.TabIndex = 3;
             this.btnShowTable.Text = "Xem";
             this.btnShowTable.UseVisualStyleBackColor = true;
+            this.btnShowTable.Click += new System.EventHandler(this.btnShowTable_Click);
             // 
             // btnEditTable
             // 
@@ -807,6 +806,7 @@ namespace QuanLyQuanCafe
             this.btnEditTable.TabIndex = 2;
             this.btnEditTable.Text = "Sửa";
             this.btnEditTable.UseVisualStyleBackColor = true;
+            this.btnEditTable.Click += new System.EventHandler(this.btnEditTable_Click);
             // 
             // btnDeleteTable
             // 
@@ -818,6 +818,7 @@ namespace QuanLyQuanCafe
             this.btnDeleteTable.TabIndex = 1;
             this.btnDeleteTable.Text = "Xóa";
             this.btnDeleteTable.UseVisualStyleBackColor = true;
+            this.btnDeleteTable.Click += new System.EventHandler(this.btnDeleteTable_Click);
             // 
             // btnAddTable
             // 
@@ -829,6 +830,7 @@ namespace QuanLyQuanCafe
             this.btnAddTable.TabIndex = 0;
             this.btnAddTable.Text = "Thêm";
             this.btnAddTable.UseVisualStyleBackColor = true;
+            this.btnAddTable.Click += new System.EventHandler(this.btnAddTable_Click);
             // 
             // panel20
             // 
@@ -1052,6 +1054,14 @@ namespace QuanLyQuanCafe
             this.dtgvAccount.Size = new System.Drawing.Size(506, 424);
             this.dtgvAccount.TabIndex = 0;
             // 
+            // txbTableStatus
+            // 
+            this.txbTableStatus.Location = new System.Drawing.Point(163, 21);
+            this.txbTableStatus.Name = "txbTableStatus";
+            this.txbTableStatus.Size = new System.Drawing.Size(234, 30);
+            this.txbTableStatus.TabIndex = 1;
+            this.txbTableStatus.Text = "Trống";
+            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -1164,7 +1174,7 @@ namespace QuanLyQuanCafe
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txbCategoryName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.TextBox txbCategoryID;
@@ -1178,13 +1188,12 @@ namespace QuanLyQuanCafe
         private System.Windows.Forms.DataGridView dtgvCategory;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.TextBox cbTableStatus;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.TextBox cbTableName;
+        private System.Windows.Forms.TextBox txbTableName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.TextBox cbTableID;
+        private System.Windows.Forms.TextBox txbTableID;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Button btnShowTable;
@@ -1211,5 +1220,6 @@ namespace QuanLyQuanCafe
         private System.Windows.Forms.Panel panel29;
         private System.Windows.Forms.DataGridView dtgvAccount;
         private System.Windows.Forms.Button btnResetPassword;
+        private System.Windows.Forms.TextBox txbTableStatus;
     }
 }

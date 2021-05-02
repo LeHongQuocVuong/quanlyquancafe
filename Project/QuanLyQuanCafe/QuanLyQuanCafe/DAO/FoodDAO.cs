@@ -97,5 +97,11 @@ namespace QuanLyQuanCafe.DAO
 
             return result > 0;
         }
+
+        public void DeleteFoodByCategoryID(int id)
+        {
+            BillInfoDAO.Instance.DeleteBillInfoByFoodID_Category(id);
+            DataProvider.Instance.ExecuteQuery("delete dbo.Food WHERE idCategory = " + id);
+        }
     }
 }
