@@ -79,6 +79,7 @@ namespace QuanLyQuanCafe
             this.tpTable = new System.Windows.Forms.TabPage();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
+            this.txbTableStatus = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.txbTableName = new System.Windows.Forms.TextBox();
@@ -97,7 +98,6 @@ namespace QuanLyQuanCafe
             this.panel23 = new System.Windows.Forms.Panel();
             this.btnResetPassword = new System.Windows.Forms.Button();
             this.panel25 = new System.Windows.Forms.Panel();
-            this.cbAccountType = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel26 = new System.Windows.Forms.Panel();
             this.txbDisplayName = new System.Windows.Forms.TextBox();
@@ -112,7 +112,24 @@ namespace QuanLyQuanCafe
             this.btnAddAccount = new System.Windows.Forms.Button();
             this.panel29 = new System.Windows.Forms.Panel();
             this.dtgvAccount = new System.Windows.Forms.DataGridView();
-            this.txbTableStatus = new System.Windows.Forms.TextBox();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.displayname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.btnFristBillPage = new System.Windows.Forms.Button();
+            this.btnLastBillPage = new System.Windows.Forms.Button();
+            this.btnPrevioursBillPage = new System.Windows.Forms.Button();
+            this.btnNextBillPage = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tcAdmin.SuspendLayout();
             this.tpBill.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -152,6 +169,7 @@ namespace QuanLyQuanCafe
             this.panel28.SuspendLayout();
             this.panel29.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // tcAdmin
@@ -222,6 +240,11 @@ namespace QuanLyQuanCafe
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.btnNextBillPage);
+            this.panel1.Controls.Add(this.btnPrevioursBillPage);
+            this.panel1.Controls.Add(this.btnLastBillPage);
+            this.panel1.Controls.Add(this.btnFristBillPage);
             this.panel1.Controls.Add(this.dtgvBill);
             this.panel1.Location = new System.Drawing.Point(7, 47);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -237,7 +260,7 @@ namespace QuanLyQuanCafe
             this.dtgvBill.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtgvBill.Name = "dtgvBill";
             this.dtgvBill.RowHeadersWidth = 51;
-            this.dtgvBill.Size = new System.Drawing.Size(948, 477);
+            this.dtgvBill.Size = new System.Drawing.Size(948, 436);
             this.dtgvBill.TabIndex = 0;
             // 
             // tpFood
@@ -275,6 +298,7 @@ namespace QuanLyQuanCafe
             this.btnSearchFood.TabIndex = 3;
             this.btnSearchFood.Text = "Tìm";
             this.btnSearchFood.UseVisualStyleBackColor = true;
+            this.btnSearchFood.Click += new System.EventHandler(this.btnSearchFood_Click);
             // 
             // txbSearchFoodName
             // 
@@ -494,11 +518,16 @@ namespace QuanLyQuanCafe
             // dtgvFood
             // 
             this.dtgvFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvFood.Location = new System.Drawing.Point(4, 3);
+            this.dtgvFood.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.name,
+            this.price,
+            this.id,
+            this.idCategory});
+            this.dtgvFood.Location = new System.Drawing.Point(4, 4);
             this.dtgvFood.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtgvFood.Name = "dtgvFood";
             this.dtgvFood.RowHeadersWidth = 51;
-            this.dtgvFood.Size = new System.Drawing.Size(506, 424);
+            this.dtgvFood.Size = new System.Drawing.Size(513, 424);
             this.dtgvFood.TabIndex = 0;
             // 
             // tpFoodCatagory
@@ -658,6 +687,9 @@ namespace QuanLyQuanCafe
             // dtgvCategory
             // 
             this.dtgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
             this.dtgvCategory.Location = new System.Drawing.Point(4, 3);
             this.dtgvCategory.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtgvCategory.Name = "dtgvCategory";
@@ -699,6 +731,14 @@ namespace QuanLyQuanCafe
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(403, 75);
             this.panel21.TabIndex = 3;
+            // 
+            // txbTableStatus
+            // 
+            this.txbTableStatus.Location = new System.Drawing.Point(163, 21);
+            this.txbTableStatus.Name = "txbTableStatus";
+            this.txbTableStatus.Size = new System.Drawing.Size(234, 30);
+            this.txbTableStatus.TabIndex = 1;
+            this.txbTableStatus.Text = "Trống";
             // 
             // label9
             // 
@@ -844,6 +884,10 @@ namespace QuanLyQuanCafe
             // dtgvTable
             // 
             this.dtgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.status});
             this.dtgvTable.Location = new System.Drawing.Point(4, 3);
             this.dtgvTable.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtgvTable.Name = "dtgvTable";
@@ -887,25 +931,17 @@ namespace QuanLyQuanCafe
             this.btnResetPassword.TabIndex = 4;
             this.btnResetPassword.Text = "Đặt lại mật khẩu";
             this.btnResetPassword.UseVisualStyleBackColor = true;
+            this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
             // 
             // panel25
             // 
-            this.panel25.Controls.Add(this.cbAccountType);
+            this.panel25.Controls.Add(this.numericUpDown1);
             this.panel25.Controls.Add(this.label11);
             this.panel25.Location = new System.Drawing.Point(5, 171);
             this.panel25.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(403, 75);
             this.panel25.TabIndex = 3;
-            // 
-            // cbAccountType
-            // 
-            this.cbAccountType.FormattingEnabled = true;
-            this.cbAccountType.Location = new System.Drawing.Point(156, 21);
-            this.cbAccountType.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cbAccountType.Name = "cbAccountType";
-            this.cbAccountType.Size = new System.Drawing.Size(242, 33);
-            this.cbAccountType.TabIndex = 1;
             // 
             // label11
             // 
@@ -964,7 +1000,6 @@ namespace QuanLyQuanCafe
             this.txbUserName.Location = new System.Drawing.Point(156, 22);
             this.txbUserName.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txbUserName.Name = "txbUserName";
-            this.txbUserName.ReadOnly = true;
             this.txbUserName.Size = new System.Drawing.Size(242, 30);
             this.txbUserName.TabIndex = 1;
             // 
@@ -1001,6 +1036,7 @@ namespace QuanLyQuanCafe
             this.btnShowAccount.TabIndex = 3;
             this.btnShowAccount.Text = "Xem";
             this.btnShowAccount.UseVisualStyleBackColor = true;
+            this.btnShowAccount.Click += new System.EventHandler(this.btnShowAccount_Click);
             // 
             // btnEditAccount
             // 
@@ -1012,6 +1048,7 @@ namespace QuanLyQuanCafe
             this.btnEditAccount.TabIndex = 2;
             this.btnEditAccount.Text = "Sửa";
             this.btnEditAccount.UseVisualStyleBackColor = true;
+            this.btnEditAccount.Click += new System.EventHandler(this.btnEditAccount_Click);
             // 
             // btnDeleteAccount
             // 
@@ -1023,6 +1060,7 @@ namespace QuanLyQuanCafe
             this.btnDeleteAccount.TabIndex = 1;
             this.btnDeleteAccount.Text = "Xóa";
             this.btnDeleteAccount.UseVisualStyleBackColor = true;
+            this.btnDeleteAccount.Click += new System.EventHandler(this.btnDeleteAccount_Click);
             // 
             // btnAddAccount
             // 
@@ -1034,6 +1072,7 @@ namespace QuanLyQuanCafe
             this.btnAddAccount.TabIndex = 0;
             this.btnAddAccount.Text = "Thêm";
             this.btnAddAccount.UseVisualStyleBackColor = true;
+            this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
             // 
             // panel29
             // 
@@ -1046,7 +1085,12 @@ namespace QuanLyQuanCafe
             // 
             // dtgvAccount
             // 
+            this.dtgvAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvAccount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Username,
+            this.displayname,
+            this.type});
             this.dtgvAccount.Location = new System.Drawing.Point(4, 3);
             this.dtgvAccount.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtgvAccount.Name = "dtgvAccount";
@@ -1054,13 +1098,157 @@ namespace QuanLyQuanCafe
             this.dtgvAccount.Size = new System.Drawing.Size(506, 424);
             this.dtgvAccount.TabIndex = 0;
             // 
-            // txbTableStatus
+            // name
             // 
-            this.txbTableStatus.Location = new System.Drawing.Point(163, 21);
-            this.txbTableStatus.Name = "txbTableStatus";
-            this.txbTableStatus.Size = new System.Drawing.Size(234, 30);
-            this.txbTableStatus.TabIndex = 1;
-            this.txbTableStatus.Text = "Trống";
+            this.name.DataPropertyName = "Name";
+            this.name.HeaderText = "Tên";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.Width = 125;
+            // 
+            // price
+            // 
+            this.price.DataPropertyName = "Price";
+            this.price.HeaderText = "Giá";
+            this.price.MinimumWidth = 6;
+            this.price.Name = "price";
+            this.price.Width = 125;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "ID";
+            this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.Width = 125;
+            // 
+            // idCategory
+            // 
+            this.idCategory.DataPropertyName = "CategoryID";
+            this.idCategory.HeaderText = "ID Danh mục";
+            this.idCategory.MinimumWidth = 6;
+            this.idCategory.Name = "idCategory";
+            this.idCategory.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tên";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn3.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Tên";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "Status";
+            this.status.HeaderText = "Trạng thái";
+            this.status.MinimumWidth = 6;
+            this.status.Name = "status";
+            this.status.Width = 125;
+            // 
+            // Username
+            // 
+            this.Username.DataPropertyName = "UserName";
+            this.Username.HeaderText = "Tên đăng nhập";
+            this.Username.MinimumWidth = 6;
+            this.Username.Name = "Username";
+            // 
+            // displayname
+            // 
+            this.displayname.DataPropertyName = "DisplayName";
+            this.displayname.HeaderText = "Tên hiển thị";
+            this.displayname.MinimumWidth = 6;
+            this.displayname.Name = "displayname";
+            // 
+            // type
+            // 
+            this.type.DataPropertyName = "Type";
+            this.type.HeaderText = "Loại";
+            this.type.MinimumWidth = 6;
+            this.type.Name = "type";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(163, 22);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 30);
+            this.numericUpDown1.TabIndex = 1;
+            // 
+            // btnFristBillPage
+            // 
+            this.btnFristBillPage.AutoSize = true;
+            this.btnFristBillPage.Location = new System.Drawing.Point(4, 445);
+            this.btnFristBillPage.Name = "btnFristBillPage";
+            this.btnFristBillPage.Size = new System.Drawing.Size(87, 35);
+            this.btnFristBillPage.TabIndex = 1;
+            this.btnFristBillPage.Text = "First";
+            this.btnFristBillPage.UseVisualStyleBackColor = true;
+            // 
+            // btnLastBillPage
+            // 
+            this.btnLastBillPage.AutoSize = true;
+            this.btnLastBillPage.Location = new System.Drawing.Point(864, 445);
+            this.btnLastBillPage.Name = "btnLastBillPage";
+            this.btnLastBillPage.Size = new System.Drawing.Size(87, 35);
+            this.btnLastBillPage.TabIndex = 2;
+            this.btnLastBillPage.Text = "Last";
+            this.btnLastBillPage.UseVisualStyleBackColor = true;
+            // 
+            // btnPrevioursBillPage
+            // 
+            this.btnPrevioursBillPage.AutoSize = true;
+            this.btnPrevioursBillPage.Location = new System.Drawing.Point(97, 445);
+            this.btnPrevioursBillPage.Name = "btnPrevioursBillPage";
+            this.btnPrevioursBillPage.Size = new System.Drawing.Size(104, 35);
+            this.btnPrevioursBillPage.TabIndex = 3;
+            this.btnPrevioursBillPage.Text = "Previours";
+            this.btnPrevioursBillPage.UseVisualStyleBackColor = true;
+            // 
+            // btnNextBillPage
+            // 
+            this.btnNextBillPage.AutoSize = true;
+            this.btnNextBillPage.Location = new System.Drawing.Point(771, 445);
+            this.btnNextBillPage.Name = "btnNextBillPage";
+            this.btnNextBillPage.Size = new System.Drawing.Size(87, 35);
+            this.btnNextBillPage.TabIndex = 4;
+            this.btnNextBillPage.Text = "Next";
+            this.btnNextBillPage.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(433, 447);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(106, 30);
+            this.textBox1.TabIndex = 5;
             // 
             // fAdmin
             // 
@@ -1078,6 +1266,7 @@ namespace QuanLyQuanCafe
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).EndInit();
             this.tpFood.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
@@ -1131,6 +1320,7 @@ namespace QuanLyQuanCafe
             this.panel28.PerformLayout();
             this.panel29.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1204,7 +1394,6 @@ namespace QuanLyQuanCafe
         private System.Windows.Forms.DataGridView dtgvTable;
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Panel panel25;
-        private System.Windows.Forms.ComboBox cbAccountType;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel26;
         private System.Windows.Forms.TextBox txbDisplayName;
@@ -1221,5 +1410,23 @@ namespace QuanLyQuanCafe
         private System.Windows.Forms.DataGridView dtgvAccount;
         private System.Windows.Forms.Button btnResetPassword;
         private System.Windows.Forms.TextBox txbTableStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn displayname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn type;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnNextBillPage;
+        private System.Windows.Forms.Button btnPrevioursBillPage;
+        private System.Windows.Forms.Button btnLastBillPage;
+        private System.Windows.Forms.Button btnFristBillPage;
     }
 }
