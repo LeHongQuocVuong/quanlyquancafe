@@ -29,6 +29,8 @@ namespace QuanLyQuanCafe
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.tcAdmin = new System.Windows.Forms.TabControl();
             this.tpBill = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -36,6 +38,11 @@ namespace QuanLyQuanCafe
             this.dtpkToDate = new System.Windows.Forms.DateTimePicker();
             this.dtpkFromDate = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txbPageBill = new System.Windows.Forms.TextBox();
+            this.btnNextBillPage = new System.Windows.Forms.Button();
+            this.btnPrevioursBillPage = new System.Windows.Forms.Button();
+            this.btnLastBillPage = new System.Windows.Forms.Button();
+            this.btnFristBillPage = new System.Windows.Forms.Button();
             this.dtgvBill = new System.Windows.Forms.DataGridView();
             this.tpFood = new System.Windows.Forms.TabPage();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -61,6 +68,10 @@ namespace QuanLyQuanCafe
             this.btnAddFood = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dtgvFood = new System.Windows.Forms.DataGridView();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpFoodCatagory = new System.Windows.Forms.TabPage();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -76,6 +87,8 @@ namespace QuanLyQuanCafe
             this.btnAddCategory = new System.Windows.Forms.Button();
             this.panel18 = new System.Windows.Forms.Panel();
             this.dtgvCategory = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpTable = new System.Windows.Forms.TabPage();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
@@ -94,10 +107,14 @@ namespace QuanLyQuanCafe
             this.btnAddTable = new System.Windows.Forms.Button();
             this.panel20 = new System.Windows.Forms.Panel();
             this.dtgvTable = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpAccount = new System.Windows.Forms.TabPage();
             this.panel23 = new System.Windows.Forms.Panel();
             this.btnResetPassword = new System.Windows.Forms.Button();
             this.panel25 = new System.Windows.Forms.Panel();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.panel26 = new System.Windows.Forms.Panel();
             this.txbDisplayName = new System.Windows.Forms.TextBox();
@@ -112,24 +129,14 @@ namespace QuanLyQuanCafe
             this.btnAddAccount = new System.Windows.Forms.Button();
             this.panel29 = new System.Windows.Forms.Panel();
             this.dtgvAccount = new System.Windows.Forms.DataGridView();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.displayname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.btnFristBillPage = new System.Windows.Forms.Button();
-            this.btnLastBillPage = new System.Windows.Forms.Button();
-            this.btnPrevioursBillPage = new System.Windows.Forms.Button();
-            this.btnNextBillPage = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.rpViewer = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.USP_GetListBillByDateForReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.QuanLyQuanCafeDataSet2 = new QuanLyQuanCafe.QuanLyQuanCafeDataSet2();
+            this.USP_GetListBillByDateForReportTableAdapter = new QuanLyQuanCafe.QuanLyQuanCafeDataSet2TableAdapters.USP_GetListBillByDateForReportTableAdapter();
             this.tcAdmin.SuspendLayout();
             this.tpBill.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -164,12 +171,15 @@ namespace QuanLyQuanCafe
             this.tpAccount.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panel25.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel26.SuspendLayout();
             this.panel27.SuspendLayout();
             this.panel28.SuspendLayout();
             this.panel29.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.USP_GetListBillByDateForReportBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // tcAdmin
@@ -179,6 +189,7 @@ namespace QuanLyQuanCafe
             this.tcAdmin.Controls.Add(this.tpFoodCatagory);
             this.tcAdmin.Controls.Add(this.tpTable);
             this.tcAdmin.Controls.Add(this.tpAccount);
+            this.tcAdmin.Controls.Add(this.tabPage1);
             this.tcAdmin.Location = new System.Drawing.Point(14, 12);
             this.tcAdmin.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tcAdmin.Name = "tcAdmin";
@@ -240,7 +251,7 @@ namespace QuanLyQuanCafe
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txbPageBill);
             this.panel1.Controls.Add(this.btnNextBillPage);
             this.panel1.Controls.Add(this.btnPrevioursBillPage);
             this.panel1.Controls.Add(this.btnLastBillPage);
@@ -251,6 +262,61 @@ namespace QuanLyQuanCafe
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(955, 483);
             this.panel1.TabIndex = 0;
+            // 
+            // txbPageBill
+            // 
+            this.txbPageBill.Location = new System.Drawing.Point(433, 447);
+            this.txbPageBill.Name = "txbPageBill";
+            this.txbPageBill.ReadOnly = true;
+            this.txbPageBill.Size = new System.Drawing.Size(106, 30);
+            this.txbPageBill.TabIndex = 5;
+            this.txbPageBill.Text = "1";
+            this.txbPageBill.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txbPageBill.TextChanged += new System.EventHandler(this.txbPageBill_TextChanged);
+            // 
+            // btnNextBillPage
+            // 
+            this.btnNextBillPage.AutoSize = true;
+            this.btnNextBillPage.Location = new System.Drawing.Point(771, 445);
+            this.btnNextBillPage.Name = "btnNextBillPage";
+            this.btnNextBillPage.Size = new System.Drawing.Size(87, 35);
+            this.btnNextBillPage.TabIndex = 4;
+            this.btnNextBillPage.Text = "Next";
+            this.btnNextBillPage.UseVisualStyleBackColor = true;
+            this.btnNextBillPage.Click += new System.EventHandler(this.btnNextBillPage_Click);
+            // 
+            // btnPrevioursBillPage
+            // 
+            this.btnPrevioursBillPage.AutoSize = true;
+            this.btnPrevioursBillPage.Location = new System.Drawing.Point(97, 445);
+            this.btnPrevioursBillPage.Name = "btnPrevioursBillPage";
+            this.btnPrevioursBillPage.Size = new System.Drawing.Size(104, 35);
+            this.btnPrevioursBillPage.TabIndex = 3;
+            this.btnPrevioursBillPage.Text = "Previours";
+            this.btnPrevioursBillPage.UseVisualStyleBackColor = true;
+            this.btnPrevioursBillPage.Click += new System.EventHandler(this.btnPrevioursBillPage_Click);
+            // 
+            // btnLastBillPage
+            // 
+            this.btnLastBillPage.AutoSize = true;
+            this.btnLastBillPage.Location = new System.Drawing.Point(864, 445);
+            this.btnLastBillPage.Name = "btnLastBillPage";
+            this.btnLastBillPage.Size = new System.Drawing.Size(87, 35);
+            this.btnLastBillPage.TabIndex = 2;
+            this.btnLastBillPage.Text = "Last";
+            this.btnLastBillPage.UseVisualStyleBackColor = true;
+            this.btnLastBillPage.Click += new System.EventHandler(this.btnLastBillPage_Click);
+            // 
+            // btnFristBillPage
+            // 
+            this.btnFristBillPage.AutoSize = true;
+            this.btnFristBillPage.Location = new System.Drawing.Point(4, 445);
+            this.btnFristBillPage.Name = "btnFristBillPage";
+            this.btnFristBillPage.Size = new System.Drawing.Size(87, 35);
+            this.btnFristBillPage.TabIndex = 1;
+            this.btnFristBillPage.Text = "First";
+            this.btnFristBillPage.UseVisualStyleBackColor = true;
+            this.btnFristBillPage.Click += new System.EventHandler(this.btnFristBillPage_Click);
             // 
             // dtgvBill
             // 
@@ -530,6 +596,38 @@ namespace QuanLyQuanCafe
             this.dtgvFood.Size = new System.Drawing.Size(513, 424);
             this.dtgvFood.TabIndex = 0;
             // 
+            // name
+            // 
+            this.name.DataPropertyName = "Name";
+            this.name.HeaderText = "Tên";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.Width = 125;
+            // 
+            // price
+            // 
+            this.price.DataPropertyName = "Price";
+            this.price.HeaderText = "Giá";
+            this.price.MinimumWidth = 6;
+            this.price.Name = "price";
+            this.price.Width = 125;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "ID";
+            this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.Width = 125;
+            // 
+            // idCategory
+            // 
+            this.idCategory.DataPropertyName = "CategoryID";
+            this.idCategory.HeaderText = "ID Danh mục";
+            this.idCategory.MinimumWidth = 6;
+            this.idCategory.Name = "idCategory";
+            this.idCategory.Width = 125;
+            // 
             // tpFoodCatagory
             // 
             this.tpFoodCatagory.Controls.Add(this.panel12);
@@ -696,6 +794,22 @@ namespace QuanLyQuanCafe
             this.dtgvCategory.RowHeadersWidth = 51;
             this.dtgvCategory.Size = new System.Drawing.Size(506, 424);
             this.dtgvCategory.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tên";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 125;
             // 
             // tpTable
             // 
@@ -895,6 +1009,30 @@ namespace QuanLyQuanCafe
             this.dtgvTable.Size = new System.Drawing.Size(506, 424);
             this.dtgvTable.TabIndex = 0;
             // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn3.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Tên";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "Status";
+            this.status.HeaderText = "Trạng thái";
+            this.status.MinimumWidth = 6;
+            this.status.Name = "status";
+            this.status.Width = 125;
+            // 
             // tpAccount
             // 
             this.tpAccount.Controls.Add(this.panel23);
@@ -942,6 +1080,18 @@ namespace QuanLyQuanCafe
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(403, 75);
             this.panel25.TabIndex = 3;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(163, 22);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 30);
+            this.numericUpDown1.TabIndex = 1;
             // 
             // label11
             // 
@@ -1098,78 +1248,6 @@ namespace QuanLyQuanCafe
             this.dtgvAccount.Size = new System.Drawing.Size(506, 424);
             this.dtgvAccount.TabIndex = 0;
             // 
-            // name
-            // 
-            this.name.DataPropertyName = "Name";
-            this.name.HeaderText = "Tên";
-            this.name.MinimumWidth = 6;
-            this.name.Name = "name";
-            this.name.Width = 125;
-            // 
-            // price
-            // 
-            this.price.DataPropertyName = "Price";
-            this.price.HeaderText = "Giá";
-            this.price.MinimumWidth = 6;
-            this.price.Name = "price";
-            this.price.Width = 125;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "ID";
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Width = 125;
-            // 
-            // idCategory
-            // 
-            this.idCategory.DataPropertyName = "CategoryID";
-            this.idCategory.HeaderText = "ID Danh mục";
-            this.idCategory.MinimumWidth = 6;
-            this.idCategory.Name = "idCategory";
-            this.idCategory.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tên";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn3.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Tên";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 125;
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "Status";
-            this.status.HeaderText = "Trạng thái";
-            this.status.MinimumWidth = 6;
-            this.status.Name = "status";
-            this.status.Width = 125;
-            // 
             // Username
             // 
             this.Username.DataPropertyName = "UserName";
@@ -1191,64 +1269,41 @@ namespace QuanLyQuanCafe
             this.type.MinimumWidth = 6;
             this.type.Name = "type";
             // 
-            // numericUpDown1
+            // tabPage1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(163, 22);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 30);
-            this.numericUpDown1.TabIndex = 1;
+            this.tabPage1.Controls.Add(this.rpViewer);
+            this.tabPage1.Location = new System.Drawing.Point(4, 34);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(968, 533);
+            this.tabPage1.TabIndex = 5;
+            this.tabPage1.Text = "Report";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // btnFristBillPage
+            // rpViewer
             // 
-            this.btnFristBillPage.AutoSize = true;
-            this.btnFristBillPage.Location = new System.Drawing.Point(4, 445);
-            this.btnFristBillPage.Name = "btnFristBillPage";
-            this.btnFristBillPage.Size = new System.Drawing.Size(87, 35);
-            this.btnFristBillPage.TabIndex = 1;
-            this.btnFristBillPage.Text = "First";
-            this.btnFristBillPage.UseVisualStyleBackColor = true;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.USP_GetListBillByDateForReportBindingSource;
+            this.rpViewer.LocalReport.DataSources.Add(reportDataSource1);
+            this.rpViewer.LocalReport.ReportEmbeddedResource = "QuanLyQuanCafe.Report3.rdlc";
+            this.rpViewer.Location = new System.Drawing.Point(6, 6);
+            this.rpViewer.Name = "rpViewer";
+            this.rpViewer.Size = new System.Drawing.Size(956, 521);
+            this.rpViewer.TabIndex = 0;
             // 
-            // btnLastBillPage
+            // USP_GetListBillByDateForReportBindingSource
             // 
-            this.btnLastBillPage.AutoSize = true;
-            this.btnLastBillPage.Location = new System.Drawing.Point(864, 445);
-            this.btnLastBillPage.Name = "btnLastBillPage";
-            this.btnLastBillPage.Size = new System.Drawing.Size(87, 35);
-            this.btnLastBillPage.TabIndex = 2;
-            this.btnLastBillPage.Text = "Last";
-            this.btnLastBillPage.UseVisualStyleBackColor = true;
+            this.USP_GetListBillByDateForReportBindingSource.DataMember = "USP_GetListBillByDateForReport";
+            this.USP_GetListBillByDateForReportBindingSource.DataSource = this.QuanLyQuanCafeDataSet2;
             // 
-            // btnPrevioursBillPage
+            // QuanLyQuanCafeDataSet2
             // 
-            this.btnPrevioursBillPage.AutoSize = true;
-            this.btnPrevioursBillPage.Location = new System.Drawing.Point(97, 445);
-            this.btnPrevioursBillPage.Name = "btnPrevioursBillPage";
-            this.btnPrevioursBillPage.Size = new System.Drawing.Size(104, 35);
-            this.btnPrevioursBillPage.TabIndex = 3;
-            this.btnPrevioursBillPage.Text = "Previours";
-            this.btnPrevioursBillPage.UseVisualStyleBackColor = true;
+            this.QuanLyQuanCafeDataSet2.DataSetName = "QuanLyQuanCafeDataSet2";
+            this.QuanLyQuanCafeDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // btnNextBillPage
+            // USP_GetListBillByDateForReportTableAdapter
             // 
-            this.btnNextBillPage.AutoSize = true;
-            this.btnNextBillPage.Location = new System.Drawing.Point(771, 445);
-            this.btnNextBillPage.Name = "btnNextBillPage";
-            this.btnNextBillPage.Size = new System.Drawing.Size(87, 35);
-            this.btnNextBillPage.TabIndex = 4;
-            this.btnNextBillPage.Text = "Next";
-            this.btnNextBillPage.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(433, 447);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(106, 30);
-            this.textBox1.TabIndex = 5;
+            this.USP_GetListBillByDateForReportTableAdapter.ClearBeforeFill = true;
             // 
             // fAdmin
             // 
@@ -1261,6 +1316,7 @@ namespace QuanLyQuanCafe
             this.Name = "fAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
+            this.Load += new System.EventHandler(this.fAdmin_Load);
             this.tcAdmin.ResumeLayout(false);
             this.tpBill.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -1312,6 +1368,7 @@ namespace QuanLyQuanCafe
             this.panel23.PerformLayout();
             this.panel25.ResumeLayout(false);
             this.panel25.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel26.ResumeLayout(false);
             this.panel26.PerformLayout();
             this.panel27.ResumeLayout(false);
@@ -1320,7 +1377,9 @@ namespace QuanLyQuanCafe
             this.panel28.PerformLayout();
             this.panel29.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.USP_GetListBillByDateForReportBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1423,10 +1482,16 @@ namespace QuanLyQuanCafe
         private System.Windows.Forms.DataGridViewTextBoxColumn displayname;
         private System.Windows.Forms.DataGridViewTextBoxColumn type;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txbPageBill;
         private System.Windows.Forms.Button btnNextBillPage;
         private System.Windows.Forms.Button btnPrevioursBillPage;
         private System.Windows.Forms.Button btnLastBillPage;
         private System.Windows.Forms.Button btnFristBillPage;
+        private System.Windows.Forms.BindingSource USP_GetTableListBindingSource;
+        private System.Windows.Forms.BindingSource USP_GetListBillByDateForReportBindingSource;
+        private QuanLyQuanCafeDataSet2 QuanLyQuanCafeDataSet2;
+        private QuanLyQuanCafeDataSet2TableAdapters.USP_GetListBillByDateForReportTableAdapter USP_GetListBillByDateForReportTableAdapter;
+        private System.Windows.Forms.TabPage tabPage1;
+        private Microsoft.Reporting.WinForms.ReportViewer rpViewer;
     }
 }
