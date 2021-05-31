@@ -18,3 +18,4 @@ D:\0_DaiHoc\quanlyquancafe\Project\QuanLyQuanCafe\QuanLyQuanCafe\obj\Release\Qua
 D:\0_DaiHoc\quanlyquancafe\Project\QuanLyQuanCafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.pdb
 D:\0_DaiHoc\quanlyquancafe\Project\QuanLyQuanCafe\QuanLyQuanCafe\obj\Release\RdlCompile.cache
 D:\0_DaiHoc\quanlyquancafe\Project\QuanLyQuanCafe\QuanLyQuanCafe\obj\Release\RdlCompile.compiled
+D:\0_DaiHoc\quanlyquancafe\Project\QuanLyQuanCafe\QuanLyQuanCafe\obj\Release\QuanLyQuanCafe.csprojResolveAssemblyReference.cache

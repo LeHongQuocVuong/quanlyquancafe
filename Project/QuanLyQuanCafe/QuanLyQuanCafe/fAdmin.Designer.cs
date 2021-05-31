@@ -137,6 +137,10 @@ namespace QuanLyQuanCafe
             this.USP_GetListBillByDateForReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.QuanLyQuanCafeDataSet2 = new QuanLyQuanCafe.QuanLyQuanCafeDataSet2();
             this.USP_GetListBillByDateForReportTableAdapter = new QuanLyQuanCafe.QuanLyQuanCafeDataSet2TableAdapters.USP_GetListBillByDateForReportTableAdapter();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.btnThongKeReport = new System.Windows.Forms.Button();
+            this.ToDate = new System.Windows.Forms.DateTimePicker();
+            this.FromDate = new System.Windows.Forms.DateTimePicker();
             this.tcAdmin.SuspendLayout();
             this.tpBill.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -180,6 +184,7 @@ namespace QuanLyQuanCafe
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.USP_GetListBillByDateForReportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet2)).BeginInit();
+            this.panel22.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAdmin
@@ -1271,6 +1276,7 @@ namespace QuanLyQuanCafe
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.panel22);
             this.tabPage1.Controls.Add(this.rpViewer);
             this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
@@ -1286,9 +1292,9 @@ namespace QuanLyQuanCafe
             reportDataSource1.Value = this.USP_GetListBillByDateForReportBindingSource;
             this.rpViewer.LocalReport.DataSources.Add(reportDataSource1);
             this.rpViewer.LocalReport.ReportEmbeddedResource = "QuanLyQuanCafe.Report3.rdlc";
-            this.rpViewer.Location = new System.Drawing.Point(6, 6);
+            this.rpViewer.Location = new System.Drawing.Point(51, 56);
             this.rpViewer.Name = "rpViewer";
-            this.rpViewer.Size = new System.Drawing.Size(956, 521);
+            this.rpViewer.Size = new System.Drawing.Size(872, 471);
             this.rpViewer.TabIndex = 0;
             // 
             // USP_GetListBillByDateForReportBindingSource
@@ -1304,6 +1310,46 @@ namespace QuanLyQuanCafe
             // USP_GetListBillByDateForReportTableAdapter
             // 
             this.USP_GetListBillByDateForReportTableAdapter.ClearBeforeFill = true;
+            // 
+            // panel22
+            // 
+            this.panel22.Controls.Add(this.btnThongKeReport);
+            this.panel22.Controls.Add(this.ToDate);
+            this.panel22.Controls.Add(this.FromDate);
+            this.panel22.Location = new System.Drawing.Point(4, 6);
+            this.panel22.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(1032, 34);
+            this.panel22.TabIndex = 2;
+            // 
+            // btnThongKeReport
+            // 
+            this.btnThongKeReport.AutoSize = true;
+            this.btnThongKeReport.Location = new System.Drawing.Point(433, 0);
+            this.btnThongKeReport.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnThongKeReport.Name = "btnThongKeReport";
+            this.btnThongKeReport.Size = new System.Drawing.Size(106, 35);
+            this.btnThongKeReport.TabIndex = 2;
+            this.btnThongKeReport.Text = "Thống kê";
+            this.btnThongKeReport.UseVisualStyleBackColor = true;
+            this.btnThongKeReport.Click += new System.EventHandler(this.btnThongKeReport_Click);
+            // 
+            // ToDate
+            // 
+            this.ToDate.Location = new System.Drawing.Point(617, 2);
+            this.ToDate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ToDate.Name = "ToDate";
+            this.ToDate.Size = new System.Drawing.Size(334, 30);
+            this.ToDate.TabIndex = 1;
+            // 
+            // FromDate
+            // 
+            this.FromDate.Location = new System.Drawing.Point(4, 3);
+            this.FromDate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.FromDate.Name = "FromDate";
+            this.FromDate.Size = new System.Drawing.Size(332, 30);
+            this.FromDate.TabIndex = 0;
+            this.FromDate.Value = new System.DateTime(2021, 5, 1, 13, 16, 0, 0);
             // 
             // fAdmin
             // 
@@ -1380,6 +1426,8 @@ namespace QuanLyQuanCafe
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.USP_GetListBillByDateForReportBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet2)).EndInit();
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1493,5 +1541,9 @@ namespace QuanLyQuanCafe
         private QuanLyQuanCafeDataSet2TableAdapters.USP_GetListBillByDateForReportTableAdapter USP_GetListBillByDateForReportTableAdapter;
         private System.Windows.Forms.TabPage tabPage1;
         private Microsoft.Reporting.WinForms.ReportViewer rpViewer;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Button btnThongKeReport;
+        private System.Windows.Forms.DateTimePicker ToDate;
+        private System.Windows.Forms.DateTimePicker FromDate;
     }
 }
